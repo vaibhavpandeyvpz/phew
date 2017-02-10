@@ -1,0 +1,20 @@
+{
+  "authors": [{
+    "name": "Vaibhav Pandey",
+    "email": "contact@vaibhavpandey.com"
+  }],
+  "autoload": {
+    "psr-4": {
+      "Phew\\": "src/"
+    }
+  },
+  "description": "Simple (just 2 classes) and native PHP view engine with support for inheritance (layouts).",
+  "homepage": "http://vaibhavpandeyvpz.github.io/phew",
+  "keywords": ["template", "view", "engine"],
+  "license": "MIT",
+  "name": "vaibhavpandeyvpz/phew",
+  "require": {
+    "php": "^5.3 || ^7.0"
+  },
+  "type": "library"
+}
