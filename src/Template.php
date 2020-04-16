@@ -129,6 +129,9 @@ class Template implements TemplateInterface
                 $block['content'] = $next['content'];
             }
         }
+        if (empty($this->__layout)) {
+            echo $block['content'];
+        }
         $this->__blocks[$name] = $block;
         $this->__block = null;
     }
