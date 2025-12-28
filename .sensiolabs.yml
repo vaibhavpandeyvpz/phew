@@ -1,3 +1,0 @@
-rules:
-    symfony.include_statement_used:
-        enabled: false

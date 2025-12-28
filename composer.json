@@ -1,20 +1,34 @@
 {
-  "authors": [{
-    "name": "Vaibhav Pandey",
-    "email": "contact@vaibhavpandey.com"
-  }],
+  "authors": [
+    {
+      "name": "Vaibhav Pandey",
+      "email": "contact@vaibhavpandey.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Phew\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Phew\\Tests\\": "tests/"
+    }
+  },
   "description": "Simple (just 2 classes) and native PHP view engine with support for inheritance (layouts).",
-  "homepage": "http://vaibhavpandeyvpz.github.io/phew",
-  "keywords": ["template", "view", "engine"],
+  "homepage": "https://github.com/vaibhavpandeyvpz/phew",
+  "keywords": [
+    "template",
+    "view",
+    "engine"
+  ],
   "license": "MIT",
   "name": "vaibhavpandeyvpz/phew",
   "require": {
-    "php": "^5.3 || ^7.0"
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
   },
   "type": "library"
 }
