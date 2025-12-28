@@ -160,11 +160,12 @@ class TemplateTest extends TestCase
         $this->expectException(ViewException::class);
         $this->expectExceptionMessage("Block name 'content' is reserved.");
 
+        $initialLevel = ob_get_level();
         try {
             $template->render();
         } finally {
-            // Clean up any output buffers that might be left open
-            while (ob_get_level() > 0) {
+            // Clean up only buffers created during template rendering
+            while (ob_get_level() > $initialLevel) {
                 ob_end_clean();
             }
         }
@@ -180,11 +181,12 @@ class TemplateTest extends TestCase
         $this->expectException(ViewException::class);
         $this->expectExceptionMessage('Nested blocks inside blocks is not yet allowed.');
 
+        $initialLevel = ob_get_level();
         try {
             $template->render();
         } finally {
-            // Clean up any output buffers that might be left open
-            while (ob_get_level() > 0) {
+            // Clean up only buffers created during template rendering
+            while (ob_get_level() > $initialLevel) {
                 ob_end_clean();
             }
         }
@@ -200,11 +202,12 @@ class TemplateTest extends TestCase
         $this->expectException(ViewException::class);
         $this->expectExceptionMessage('You must begin a block before you end.');
 
+        $initialLevel = ob_get_level();
         try {
             $template->render();
         } finally {
-            // Clean up any output buffers that might be left open
-            while (ob_get_level() > 0) {
+            // Clean up only buffers created during template rendering
+            while (ob_get_level() > $initialLevel) {
                 ob_end_clean();
             }
         }
